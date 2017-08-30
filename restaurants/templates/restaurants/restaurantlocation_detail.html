@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block head_title %} Restaurants|{{block.super}}{% endblock head_title %}
+{% block  content %}
+<div class="col-sm-6col-sm-offset-3">
+    {% if instance.image %}
+    <img src="{{instance.image.url}}" class="img-responsive" />
+    {% endif %}
+<h1>{{object.title}} <small>{{object.category}}</small></h1>
+<p>{{object.location}}</p>
+<p>{{object.timestamp}}, {{object.updated|timesince}} AGO</p>
+</div>
+{% endblock %}
